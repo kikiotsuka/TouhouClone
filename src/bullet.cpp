@@ -1,4 +1,4 @@
-#include "includes/bullet.h"
+#include "../includes/bullet.h"
 
 Bullet::Bullet(sf::Vector2f vel, sf::IntRect ir) {
     this->vel = vel;

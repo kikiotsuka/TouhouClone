@@ -1,5 +1,4 @@
-*.cbp
-*.depend
-*.layout
-obj/*
-
+TouhouClone
+*.swp
+src/*.swp
+includes/*.swp

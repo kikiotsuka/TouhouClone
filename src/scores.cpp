@@ -1,4 +1,4 @@
-#include "includes/scores.h"
+#include "../includes/scores.h"
 
 Scores& Scores::get_instance() {
     static Scores instance;

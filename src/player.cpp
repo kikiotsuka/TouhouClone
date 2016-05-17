@@ -1,4 +1,4 @@
-#include "includes/player.h"
+#include "../includes/player.h"
 #include <iostream> //TODO debug remove me
 
 /*

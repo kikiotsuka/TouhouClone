@@ -1,4 +1,4 @@
-#include "includes/meta.h"
+#include "../includes/meta.h"
 
 extern const float WINDOW_WIDTH = 640.0f;
 extern const float WINDOW_HEIGHT = 480.0f;

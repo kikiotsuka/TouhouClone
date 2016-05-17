@@ -1,4 +1,4 @@
-#include "includes/game.h"
+#include "../includes/game.h"
 
 #include <iostream> // TODO remove debug
 /*

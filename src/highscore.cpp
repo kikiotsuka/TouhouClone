@@ -1,4 +1,4 @@
-#include "includes/highscore.h"
+#include "../includes/highscore.h"
 
 HighScore::HighScore() {
     init();

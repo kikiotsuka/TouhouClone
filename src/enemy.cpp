@@ -1,4 +1,4 @@
-#include "includes/enemy.h"
+#include "../includes/enemy.h"
 
 //TODO
 Enemy::Enemy() {

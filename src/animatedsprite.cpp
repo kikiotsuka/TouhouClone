@@ -1,4 +1,4 @@
-#include "includes/animatedsprite.h"
+#include "../includes/animatedsprite.h"
 
 AnimatedSprite::AnimatedSprite() {    
     curr_sprite = num_sprites = 0;
