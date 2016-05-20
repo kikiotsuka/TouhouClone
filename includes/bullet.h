@@ -2,14 +2,18 @@
 #define BULLET_H
 
 #include <SFML/Graphics.hpp>
+#include <cmath>
 #include "meta.h"
 #include "boundedsprite.h"
 
+const double PI = 3.14159;
+
 class Bullet : public BoundedSprite {
 private:
-    sf::Vector2f vel;
+    // Angle is given in degrees not radians and is internally converted
+    double vel, angle;
 public:
-    Bullet(sf::Vector2f vel, sf::IntRect ir);
+    Bullet(double vel, double angle, sf::IntRect ir);
     void move();
 };
 

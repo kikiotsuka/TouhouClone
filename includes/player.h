@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <utility>
+#include <iostream>
 
 #include "meta.h"
 #include "animatedsprite.h"
@@ -40,6 +41,8 @@ const sf::IntRect BOUND_RIGHT(32 * 4, 48 * 2, 32, 48);
 const std::pair<int, int> SPRITE_DATA_RIGHT(-4, 4);
 
 const sf::IntRect BOUND_SLOW(0, 17, 64, 64);
+
+const sf::IntRect SPRITE_BULLET_REGION(200, 162, 55, 12);
 
 const int SPRITE_FRAME_RATE = 6;
 

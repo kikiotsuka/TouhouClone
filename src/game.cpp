@@ -7,11 +7,20 @@
     implement the following classes:
         Player
             possibly use touhou sprites or make own's, also implement animation
-        Enemy
-            - SmallEnemy
-            - BossEnemy
-        Bullet
-            - LargeBullet
+        Enemy - Default enemy shoots bullet in all directions, also goes horizontally across the screen
+            Movement - vel, angle, dtheta
+            > Enemy that shoots lots of small bullets
+            > Enemy that shoots tracer bullets
+            > Enemy that moves accross screen
+        Bullet - Give it velocity and angle
+            - TracerBullet
+                > Goes towards given coordinate in a straight path
+            - ArcBullet
+                > Follows curve path defined by changing the angle given a dtheta and time
+            - SineBullet
+                > Follows path of sine wave
+            - FreezeBullet
+                > Fire, after short delay freeze, continue moving after another short delay
             - Laser
         Path - creates bullet paths, contains vars
             vel, angle, dtheta

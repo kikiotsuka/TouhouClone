@@ -1,10 +1,11 @@
 #include "../includes/bullet.h"
 
-Bullet::Bullet(sf::Vector2f vel, sf::IntRect ir) {
+Bullet::Bullet(double vel, double angle, sf::IntRect ir) {
     this->vel = vel;
+    this->angle = angle * PI / 180.0;
     init(ir);
 }
 
 void Bullet::move() {
-    BoundedSprite::move(vel.x, vel.y);
+    BoundedSprite::move(vel * cos(angle), vel * sin(angle));
 }

@@ -1,6 +1,6 @@
 #include "../includes/animatedsprite.h"
 
-AnimatedSprite::AnimatedSprite() {    
+AnimatedSprite::AnimatedSprite() : BoundedSprite() {
     curr_sprite = num_sprites = 0;
     frame_counter = max_frames = 0;
 }

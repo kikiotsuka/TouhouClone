@@ -48,7 +48,7 @@ Player::Player() {
     def_speed = 5.0f;
     slow_speed = 1.75f;
     move_velocity = def_speed;
-    sprite_rotate_angle = 3.0;
+    sprite_rotate_angle = 2.0;
     for (int i = DIR_UP; i <= DIR_LEFT; i++) movement_direction[i] = false;
     slow_mode = false;
     shoot_mode = false;
@@ -93,10 +93,9 @@ void Player::move() {
         fire_counter++;
         if (fire_counter >= fire_delay) {
             fire_counter = 0;
-            sf::Vector2f bulletvel(0, -25);
-            sf::IntRect bulletregion(200, 162, 55, 12);
-            Bullet b1(bulletvel, bulletregion);
-            Bullet b2(bulletvel, bulletregion);
+            // -25 because negative is down
+            Bullet b1(-25, 90, SPRITE_BULLET_REGION);
+            Bullet b2(-25, 90, SPRITE_BULLET_REGION);
             b1.init_texture(player_texture);
             b2.init_texture(player_texture);
             b1.set_center(p.get_center());
@@ -164,12 +163,12 @@ void Player::draw(sf::RenderTarget &renderTarget) {
     p.draw(renderTarget);
     if (slow_mode) {
         for (int i = 0; i < 2; i++) {
-            if (i == 0) sprite_rotate_angle *= -1;
             slow_dot[i].rotate(sprite_rotate_angle);
             slow_dot[i].set_center(p.get_center());
             slow_dot[i].draw(renderTarget);
         }
     }
+
     for (int i = bullets.size() - 1; i >= 0; i--) {
         bullets[i].draw(renderTarget);
     }
