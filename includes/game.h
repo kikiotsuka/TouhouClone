@@ -19,6 +19,7 @@ private:
     void draw_screen_bounds(sf::RenderTarget &renderTarget);
 public:
     Game(int diff);
+    ~Game();
     int run(sf::RenderWindow &window);
 };
 

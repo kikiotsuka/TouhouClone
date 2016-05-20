@@ -15,6 +15,10 @@ Menu::Menu() {
     ret_signal[1] = SCREEN_SCORES;
 }
 
+Menu::~Menu() {
+    delete f;
+}
+
 int Menu::run(sf::RenderWindow &window) {
     if (!initialized) {
         initialized = true;
@@ -75,7 +79,7 @@ void Menu::init() {
 bool Menu::init_buttons() {
     blist.clear();
     float height = 40.0f;
-    sf::Font *f = new sf::Font();
+    f = new sf::Font();
     if (!f->loadFromFile("media/arial.ttf")) return false;
     for (int i = 0; i < numbuttons; i++) {
         float ypos = SCREEN_PLAY_HEIGHT * 1.0f * ((i + 1.0) / (numbuttons + 1));

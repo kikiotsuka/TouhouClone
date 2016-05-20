@@ -34,6 +34,10 @@ Game::Game(int diff) {
     playing = true;
 }
 
+Game::~Game() {
+
+}
+
 /*
     TODO
         test out player class,

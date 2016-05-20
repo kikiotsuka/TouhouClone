@@ -14,6 +14,9 @@ DifficultySelect::DifficultySelect() {
     ret_signal[4] = SCREEN_MENU;
 }
 
+DifficultySelect::~DifficultySelect() {
+}
+
 int DifficultySelect::run(sf::RenderWindow &window) {
     int status = Menu::run(window);
 
@@ -21,6 +24,7 @@ int DifficultySelect::run(sf::RenderWindow &window) {
         //run game
         Game *g = new Game(status);
         status = g->run(window);
+        delete g;
     }
 
     return status;

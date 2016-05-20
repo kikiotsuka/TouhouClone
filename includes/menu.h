@@ -19,8 +19,10 @@ protected:
     int ret_signal[6];
     std::vector<Button> blist;
     bool initialized;
+    sf::Font *f;
 public:
     Menu();
+    ~Menu();
     void init();
     bool init_buttons();
     int run(sf::RenderWindow &window);

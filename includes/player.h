@@ -71,6 +71,7 @@ private:
     void check_animation_state();
 public:
     Player();
+    ~Player();
     virtual void move();
     void set_move_state(int dir, bool state);
     void set_slow_mode(bool state);

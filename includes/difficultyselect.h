@@ -11,6 +11,7 @@
 class DifficultySelect : public Menu {
 public:
     DifficultySelect();
+    ~DifficultySelect();
     int run(sf::RenderWindow &window);
 };
 

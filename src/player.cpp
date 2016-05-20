@@ -56,6 +56,11 @@ Player::Player() {
     fire_delay = 2;
 }
 
+Player::~Player() {
+    delete player_texture;
+    delete effect_texture;
+}
+
 void Player::move() {
     //update player sprite
     p.tick();

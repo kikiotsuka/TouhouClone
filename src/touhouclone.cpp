@@ -30,4 +30,9 @@ int main(int argc, char** argv) {
     while (currentScreen != -1) {
         currentScreen = screens[currentScreen]->run(window);
     }
+
+    // Delete pointers
+    for (size_t i = 0; i < screens.size(); i++) {
+        delete screens[i];
+    }
 }

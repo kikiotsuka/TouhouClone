@@ -5,6 +5,7 @@
 
 class Screen {
 public:
+    virtual ~Screen();
     virtual int run(sf::RenderWindow &window) = 0;
 };
 

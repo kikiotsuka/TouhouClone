@@ -22,3 +22,14 @@ EnemyManager::EnemyManager(std::string fname, Clock* c) {
         //TODO intiialize enemies with texture sheets    
     }
 }
+
+EnemyManager::~EnemyManager() {
+    delete enemy_texture;
+    delete bullet_texture_1;
+    delete bullet_texture_2;
+
+    while (!enemies.empty()) {
+        delete enemies.front();
+        enemies.pop();
+    }
+}
