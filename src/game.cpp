@@ -1,4 +1,4 @@
-#include "../includes/game.h"
+#include "game.h"
 
 #include <iostream> // TODO remove debug
 /*
@@ -7,11 +7,10 @@
     implement the following classes:
         Player
             possibly use touhou sprites or make own's, also implement animation
-        Enemy - Default enemy shoots bullet in all directions, also goes horizontally across the screen
+        Enemy - (enemy): Default enemy shoots bullet in all directions, also goes horizontally across the screen
             Movement - vel, angle, dtheta
-            > Enemy that shoots lots of small bullets
-            > Enemy that shoots tracer bullets
-            > Enemy that moves accross screen
+            > (shotgun) Enemy that shoots lots of small bullets
+            > (sniper) Enemy that shoots tracer bullets
         Bullet - Give it velocity and angle
             - TracerBullet
                 > Goes towards given coordinate in a straight path
@@ -48,6 +47,7 @@ int Game::run(sf::RenderWindow &window) {
     Player p;
     sf::Sprite renderSprite;
     renderSprite.setPosition(sf::Vector2f(SCREEN_PLAY_BUFFER, SCREEN_PLAY_BUFFER));
+    bool debug = false; // TODO remove debug
     while (playing) {
         sf::Event e;
         while (window.pollEvent(e)) {
@@ -57,14 +57,24 @@ int Game::run(sf::RenderWindow &window) {
             } else if (e.type == sf::Event::KeyPressed) {
                 if (e.key.code == sf::Keyboard::Escape) {
                     playing = false;
+                } else if (e.key.code == sf::Keyboard::P) {
+                    debug = !debug;
                 } else {
-                    set_player_action_state(p, e, true);
+                    if (!debug)
+                        set_player_action_state(p, e, true);
                 }
-            } else if (e.type == sf::Event::KeyReleased) {
+            } else if (e.type == sf::Event::KeyReleased && !debug) {
                 set_player_action_state(p, e, false);
             }
         }
-        p.move();
+
+        // UPDATE THINGS
+        if (!debug) {
+            p.move();
+            p.check_fire();
+        }
+        // END UPDATE THINGS
+
         //draw to texture
         renderTexture.clear(sf::Color::White);
         p.draw(renderTexture);

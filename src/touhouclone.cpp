@@ -4,12 +4,12 @@
 #include <vector>
 #include <iostream>
 
-#include "../includes/meta.h"
-#include "../includes/game.h"
-#include "../includes/menu.h"
-#include "../includes/difficultyselect.h"
-#include "../includes/highscore.h"
-#include "../includes/button.h"
+#include "meta.h"
+#include "game.h"
+#include "menu.h"
+#include "difficultyselect.h"
+#include "highscore.h"
+#include "button.h"
 
 int main(int argc, char** argv) {
     sf::ContextSettings settings;

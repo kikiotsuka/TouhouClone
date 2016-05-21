@@ -1,4 +1,4 @@
-#include "../includes/animatedsprite.h"
+#include "animatedsprite.h"
 
 AnimatedSprite::AnimatedSprite() : BoundedSprite() {
     curr_sprite = num_sprites = 0;

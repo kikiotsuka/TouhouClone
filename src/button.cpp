@@ -1,4 +1,4 @@
-#include "../includes/button.h"
+#include "button.h"
 
 Button::Button(float max_x, float ypos, float height, sf::Font *f, std::string text) {
     this->f = f;

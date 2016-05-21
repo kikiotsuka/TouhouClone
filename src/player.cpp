@@ -1,4 +1,4 @@
-#include "../includes/player.h"
+#include "player.h"
 #include <iostream> //TODO debug remove me
 
 /*
@@ -53,7 +53,7 @@ Player::Player() {
     slow_mode = false;
     shoot_mode = false;
     fire_counter = 0;
-    fire_delay = 2;
+    fire_delay = 3;
 }
 
 Player::~Player() {
@@ -93,14 +93,17 @@ void Player::move() {
         p.set_center(p.get_center().x,
                      SCREEN_PLAY_HEIGHT - p.get_height() / 2.0 + p.get_height() * sizeMultiplier);
     }
+}
+
+void Player::check_fire() {
     //shoot bullets
     if (shoot_mode) {
         fire_counter++;
         if (fire_counter >= fire_delay) {
             fire_counter = 0;
-            // -25 because negative is down
-            Bullet b1(-25, 90, SPRITE_BULLET_REGION);
-            Bullet b2(-25, 90, SPRITE_BULLET_REGION);
+            double speed = -12.5;
+            Bullet b1(speed, 90, SPRITE_BULLET_REGION);
+            Bullet b2(speed, 90, SPRITE_BULLET_REGION);
             b1.init_texture(player_texture);
             b2.init_texture(player_texture);
             b1.set_center(p.get_center());

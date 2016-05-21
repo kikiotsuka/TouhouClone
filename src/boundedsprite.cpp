@@ -1,4 +1,4 @@
-#include "../includes/boundedsprite.h"
+#include "boundedsprite.h"
 
 /**
     IMPORTANT REMINDER:

@@ -5,7 +5,10 @@
 
 #include <queue>
 #include <string>
+#include <cstdlib>
+#include <ctime>
 
+#include "player.h"
 #include "enemy.h"
 #include "clock.h"
 #include "meta.h"
@@ -19,6 +22,15 @@
  * File Format
  * <tick-to-appear> <enemy-type> <x-position> <y-position> <int-rect args> <args for enemy-type>
  * Use in-stream operator to read in enemies
+ *
+ * Enemy sprite location
+ * Position (0, 321)
+ * Dimension (384, 124)
+ *
+ * 4 Rows of enemies: each enemy 31px high
+ * 12 Columns of enemies: each enemy 32 wide
+ *
+ * Cycles: first 5 neutral state, last 7 are horizontal flying states
  */
 
 class EnemyManager {
@@ -30,12 +42,14 @@ public:
      * Returns a vector of enemy pointers if enemies are spawning.
      * If no enemy is to spawn then the returned vector is empty
      */
-    std::vector<Enemy*> check_spawn();
+    void update(Player& p);
+    void draw(sf::RenderTexture);
 private:
     sf::Texture *enemy_texture;
     sf::Texture *bullet_texture_1, *bullet_texture_2;
     std::queue<Enemy*> enemies;
     std::queue<int> ticks;
+    std::vector<Bullet*> bullets;
     Clock* clock;
 };
 

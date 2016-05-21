@@ -1,4 +1,4 @@
-#include "../includes/screen.h"
+#include "screen.h"
 
 Screen::~Screen() {
 

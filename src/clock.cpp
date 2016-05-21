@@ -1,4 +1,4 @@
-#include "../includes/clock.h"
+#include "clock.h"
 
 Clock::Clock() {
     ticks = 0LL;

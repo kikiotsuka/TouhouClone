@@ -61,10 +61,6 @@ private:
     bool slow_mode, shoot_mode;
     //int num_bombs;
 
-    //TODO
-    //figure out if this vector needs to be
-    //pointers rather than references because
-    //of inheritence issues
     std::vector<Bullet> bullets;
     int fire_counter, fire_delay;
 
@@ -73,6 +69,7 @@ public:
     Player();
     ~Player();
     virtual void move();
+    virtual void check_fire();
     void set_move_state(int dir, bool state);
     void set_slow_mode(bool state);
     void set_shoot_mode(bool state);

@@ -1,4 +1,4 @@
-#include "../includes/difficultyselect.h"
+#include "difficultyselect.h"
 
 DifficultySelect::DifficultySelect() {
     Menu::init();

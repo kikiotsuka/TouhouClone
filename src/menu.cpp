@@ -1,4 +1,4 @@
-#include "../includes/menu.h"
+#include "menu.h"
 #include <iostream>
 /*
     Start
